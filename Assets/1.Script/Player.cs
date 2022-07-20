@@ -19,18 +19,17 @@ public class Player : MonoBehaviour
         vAxis = Input.GetAxisRaw("Vertical");
 
         Vector3 moveVec = new Vector3(hAxis, 0, vAxis).normalized;
-        if (moveVec.magnitude!=0)        
-            moveMoment(moveVec);
+        transform.position += moveVec * speed * Time.deltaTime;
+        transform.LookAt(transform.position + moveVec);
         
     }
 
-    void moveMoment(Vector3 dir)
+   /* void moveMoment(Vector3 dir)
     {
         Vector3 lookdir=transform.TransformDirection(dir);
         lookdir.y = 0;
         transform.Translate(dir * speed * Time.deltaTime);
         Quaternion q=Quaternion.LookRotation(lookdir,Vector3.up);
         transform.rotation = Quaternion.Slerp(transform.rotation, q,10*Time.deltaTime);
-
-    }
+    }*/
 }
