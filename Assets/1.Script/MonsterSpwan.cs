@@ -25,13 +25,11 @@ public class MonsterSpwan : MonoBehaviour
         {
             GameObject game = Instantiate(Monster, transform.position, Quaternion.identity);
             game = Monster;
-        }
-        
-        Monster.SetActive(false);       
-        while (true)
+        }       
+        while (FindObjectOfType<Monster>().Dead==true)
         {
-            Monster.SetActive(true);
-            
+            Monster.transform.position = transform.position;
+            Monster.SetActive(true);          
             yield return new WaitForSeconds(SpwanDelay);
         }
     }

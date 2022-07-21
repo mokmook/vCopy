@@ -21,4 +21,5 @@ public class Shield : MonoBehaviour
             transform.RotateAround(vector3, Vector3.up, Time.deltaTime * 55);
         }
     }
+    
 }

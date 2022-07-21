@@ -345,7 +345,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cur_hp: 100
   speed: 5
-  PlayerTr: {fileID: 0}
 --- !u!195 &2542145416675812068
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -356,7 +355,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 7
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 360

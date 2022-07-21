@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
         {
             Die();
         }
-
+        print("플레이어 HP: "+cur_hp);
     }
     void Defalut()
     {
@@ -160,7 +160,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag=="Monster")
         {
-            cur_hp -= 2;
+            cur_hp = cur_hp - 2;
         }
     }
 
