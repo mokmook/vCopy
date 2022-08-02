@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] AudioClip attckClip;
     [SerializeField] float cur_hp;
     float hAxis;
     float vAxis;
@@ -75,7 +76,7 @@ public class Player : MonoBehaviour
         {
             Die();
         }
-        print("플레이어 HP: "+cur_hp);
+
     }
     void Defalut()
     {
@@ -133,6 +134,7 @@ public class Player : MonoBehaviour
             if (Weapon == Weapon2)
             {
                 anim.SetTrigger("Attack" + WeaponNum);
+                AudioManager.instance.PlayAudioClip(attckClip,transform);
                 GameObject gameObj = (GameObject)Instantiate(Hitbox, transform.position, Quaternion.identity);
                 gameObj.GetComponent<Rigidbody>().AddForce(transform.forward * Power, ForceMode.Impulse);
                 yield return new WaitForSeconds(attackDelay);

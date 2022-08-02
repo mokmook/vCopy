@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]Slider slider;
-
+  
+    [SerializeField] GameObject gameSettingPanel;
    
     
     // Start is called before the first frame update
@@ -19,13 +19,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (FindObjectOfType<Monster>().Dead==true)
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            slider.value += 3;
+            gameSettingPanel.SetActive(!gameSettingPanel.activeSelf);
+
         }
-        if (slider.value>=20)
-        {
-            slider.value = 0;
-        }
+        
     }
 }
